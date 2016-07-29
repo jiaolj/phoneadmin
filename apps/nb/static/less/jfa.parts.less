@@ -1,0 +1,105 @@
+@import 'model.less';
+
+//搜索框
+.jfa-input(@h:30) {
+	.h(@h);.lh(@h);.bd;.ofh;
+	input {
+		.h(@h);.lh(@h);
+	}
+}
+//下拉框
+.jfa-select(@l,@t:1px) {
+	.psa;.l(@l);.mgt(@t);.lh(34px);.zi(9);
+	@cdw:140;
+	a {
+		.bg(#fff);.c(#4a4a4a);.dsb;.w(@cdw);.br(6px);.ti;.fs(15px);.bd(#ddd);
+		&:after {
+			content:'';.trgt(#676d73,5px,4px);.psa;.r(6px);.t(14px);
+		}
+		&:hover {
+			.bg(lighten(@color,55%));.bd(lighten(@color,40%));
+		}
+	}
+	dl {
+		.bg(#fff);.tlt;.w(@cdw - 1);
+		dt {
+			.bdb(#ddd);.csr;.ww;.bg(#fff);.bdl(#ddd);.bdr(#ddd);.ti;
+			&:hover {
+				.bg(lighten(@color,46%));
+			}
+		}
+	}
+}
+
+//搜索
+.jfa-search(@w:600,@h:40,@b:#ddd) {
+	.w(@w);.mg(9px auto);.psr;
+	dt {
+		.ofh;
+		input {
+			.fs(16px);
+		}
+	}
+	.jval {
+		.w(78,%);.bg(#fff);.mgr(3%);.bd(@b);.br(2px);
+		input {
+			.lh(@h - 2);.h(@h - 2);.w(94,%);.ti;
+			&.search {
+				.ti(28px);
+			}
+		}
+		&.active {
+			.bd(@color);
+		}
+		.star {
+			.psa;.t(7);.l(4);
+			&[s="0"]{
+				img[s="0"]{
+					.dsi;
+				}
+			}
+			&[s="1"]{
+				img[s="1"]{
+					.dsi;
+				}
+			}
+			&[s="2"]{
+				img[s="2"]{
+					.dsi;
+				}
+			}
+			img {
+				.h(16);.dsn;
+			}
+		}
+	}
+	.jbtn {
+		.w(15.5,%);.br(3px);.mgl(2.5,%);
+		input {
+			.bg(@color);.c(#fff);.lh(@h);.hh(@h);.ww;.fs(20);
+			&:hover{
+				.bg(lighten(@color,5%));
+			}
+		}
+	}
+}
+
+//开关ie9+
+.jfa-switch(@oc,@cc,@swh,@sww){
+	.psr;.t(6);.br(12px);.dsib;.w(@sww);.h(20);.csr;
+	&:before {
+		content:'';.psa;.dsb;.bol(@swh);.t(1);.bg(#fff);
+	}
+	&[s="1"]{
+		.bg(@oc);
+		&:before {
+			.r(1);
+		}
+	}
+	&[s="0"]{
+		.bg(@cc);
+		&:before {
+			.l(1);
+		}
+	}
+}

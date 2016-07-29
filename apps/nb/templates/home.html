@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+{% load mytags  %}
+{%block css%}<link href="{% static 'css/home.css' %}" rel="stylesheet" />{%endblock%}
+{%block content%}
+<div class="home">
+	
+</div>
+{%endblock%}
+{%block js%}<script data-main="{% static 'js/home.js' %}" src="{% static 'js/require.js' %}"></script>{%endblock%}

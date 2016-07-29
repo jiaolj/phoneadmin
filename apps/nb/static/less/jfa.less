@@ -1,0 +1,187 @@
+@import 'model.less';
+.jfa(){
+	html{.hh;.fs(100)}
+	.cb{.cb}.flt{.flt}.frt{.frt}.tct{.tct}.tlt{.tlt}.trt{.trt}
+	body,dl,p,table,h1,h2,h3,h4,h5,h6{margin:0}
+	.hide{.dsn}
+	body{
+		.hh;
+		.psr;
+		.fs(12);
+		.lh(26);
+		.ffmy('Microsoft YaHei','Lucida Grande',Arial,sans-serif;);
+	}
+	a{.tdn;.csr}
+	img{.val;}
+	input,textarea,select,summary{.otl}
+	img,iframe,input,textarea{.bdn;.bd(#ddd);.lh(20);.h(20);}
+	input[type="button"] {
+		.csr;
+	}
+	.error {
+		.c(red);
+	}
+	table {
+		border:0;margin:0;border-collapse:collapse;border-spacing:0;
+		td,th {padding:0}td{.tct}
+	}
+	.cover {.psa;.ww;.hh} //覆盖层
+	.close(@s:14,@a:1,@b:3) {.psa;.t(@a);.r(@b);.lh(@s*1.2);.fs(@s)} //关闭按钮
+	.jfa-close {
+		.close;
+		&:before {
+			content : '×';
+		}
+	}
+	.jclose(@c:#333,@s:14,@a:1,@b:3) {
+		.psa;.t(@a);.r(@b);.lh(@s*1.2);.fs(@s);
+		&:before {
+			content : '×';.c(@c);
+		}
+	}
+	.pcb {
+		&:after {
+			content :'';.cb;.dsb;
+		}
+	}
+	dl.pflt {  //浮动并清除
+		dt {
+			.flt;
+		}
+		.pcb;
+	}
+	//老版ie
+	.old-ie {
+		.psa;.zi(9);.bg(#fff);.ww;.lh(28);
+		p {
+			.mgl(30);
+		}
+		.ie-close {
+			.close;.r(9);.fs(16);
+		}
+	}
+
+	//tab切换不同div
+	.jfa-box{
+		.dsn;
+		&.active {
+			.dsb;
+		}
+	}
+	.button {
+		.dsib;.br(3px);.pd(0 4px);.bg(#F2F2F2);.c(#666);
+		border: solid #777;
+		border-width: 1px 1px 2px 1px;
+		&:hover {
+			.bg(#fff);.c(#666);
+		}
+	}
+	.jfa-cover {
+		.ww;.hh;.psf;.bg(rgba(255,255,255,0.4));.zi(9);.dsn;
+	}
+	dl.jfa-tree {
+		.pd(14px 20px);.fs(14);
+		dt {
+			.lh(30);.psr;
+			dl.json {
+				.mgl(9);
+			}
+			a {
+				.c(#333);.psr;
+				b.jsw {
+					.mgr(9);.psr;.t(-1);
+				}
+				b.jno {
+					.dsib;.w(9);.h(5);.mgr(9);
+				}
+				&.active {
+					.c(red);
+				}
+			}
+			&[s="0"]{
+				>a {
+					b.jsw {
+						.trgl(#333,7px,5px);
+					}
+				}
+				>dl.json {
+					.dsn;
+				}
+			}
+			&[s="1"]{
+				>a {
+					b.jsw {
+						.trgt(#333,7px,5px);
+					}
+				}
+				>dl.json {
+					
+				}
+			}
+		}
+	}
+	.button-green {.button-color(green)}
+	.button-red {.button-color(red)}
+	.jfa-alert {
+		.psa;.pd(10px);.w(440);.mgl(-210);.br(3px);.bd;.l(50,%);.zi(99);.bg(#F2F2F2);.fs(14);.dsn;.bs-alert;
+		.confirm {
+			.alertInner {
+				h1 {
+					.ti(6px);.fs(16);
+					.lh(35);
+					i {
+						.mgr(6);
+					}
+				}
+				.msg {
+					.pd(15px 10px);
+					&.login,&.reg {
+						p {
+							.mgt(8);
+							input {
+								.bd;.h(20);.w(200);
+							}
+						}
+					}
+				}
+				&.green {
+					.bd(green);
+					h1 {
+						.c(green);.bg(#E4FFE8);.bdb(#4BAC4B);
+					}
+				}
+				&.red {
+					.bd(#FF6600);
+					h1 {
+						.c(#FF6600);.bg(#FFEDE1);.bdb(#FFAF7A);
+					}
+				}
+			}
+			.toolBar {
+				.psr;
+				nav {
+					.h(28);
+					a {
+						.lh(38);.mgl(9);
+					}
+				}
+				span {
+					.psa;.r;
+				}
+			}
+		}
+	}
+	//旋转
+	.jfa-rotate {
+		animation:circle 0.36s infinite linear;
+		-webkit-animation:circle 0.36s infinite linear;
+	}
+	@-webkit-keyframes circle{
+		0%{ .tsf(0deg)}
+		100%{ .tsf(360deg)}
+	}
+	@keyframes circle{
+		0%{ .tsf(0deg)}
+		100%{ .tsf(360deg)}
+	}
+}

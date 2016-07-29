@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load mytags  %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>{{seoTitle}}</title>
+<link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+{%block css%}{%endblock%}
+<!--[if lt IE 11]>
+<script defer async="true" src="{% static 'js/ie/PIE.js' %}" ></script>
+<script defer async="true" src="{% static 'js/ie/html5shiv.min.js' %}" ></script>
+<script defer async="true" src="{% static 'js/ie/respond.min.js' %}"></script>
+<script defer async="true" src="{% static 'js/ie/placeholders.min.js' %}"></script>
+<![endif]-->
+<script defer async="true" src="{% static 'js/My97DatePicker/WdatePicker.js' %}" ></script>
+<script defer async="true" src="{% static 'js/underscore.min.js' %}" ></script>
+{%block js%}{%endblock%}
+</head>
+<body>
+<!--[if lt IE 8]>
+{%include 'error/ie.html'%}
+<![endif]-->
+{%block head%}
+{%include 'head.html'%}
+{%endblock%}
+<section id="content">
+{%block content%}{%endblock%}
+</section>
+{%block foot%}
+{%include 'foot.html'%}
+{%endblock%}
+</body>
+</html>

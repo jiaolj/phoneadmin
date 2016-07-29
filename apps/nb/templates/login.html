@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+{% load mytags  %}
+{%block css%}<link href="{% static 'css/login.css' %}" rel="stylesheet" />{%endblock%}
+{%block head%}{%endblock%}
+{%block content%}
+<div class="login">
+	<p><input class="uname log-uname" placeholder="手机号或邮箱" type="text"/></p>
+	<p><input class="passwd log-passwd jfa-enter" placeholder="密码" type="password"/></p>
+	<p><a jfa-click="enter" jfa-tar=".jfa-enter" jfa-callback="login">登录</a></p>
+</div>
+{%endblock%}
+{%block foot%}{%endblock%}
+{%block js%}<script data-main="{% static 'js/login.js' %}" src="{% static 'js/require.js' %}"></script>{%endblock%}
