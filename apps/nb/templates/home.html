@@ -4,7 +4,54 @@
 {%block css%}<link href="{% static 'css/home.css' %}" rel="stylesheet" />{%endblock%}
 {%block content%}
 <div class="home">
-	
+	<div class="adminBox"><a class="logout">退出</a></div>
+	<div class="addBox">
+		<input type="text" class="val" />
+		<a class="add">add</a><input type="file"/> Import
+	</div>
+	<div class="quaryBox">
+		<select class="province">
+			<option value="all" >全部</option>
+			<option value=0 >北京</option>
+			<option value=1 >上海</option>
+			<option value=2 >天津</option>
+			<option value=3 >重庆</option>
+			<option value=4 >河北</option>
+			<option value=5 >山西</option>
+			<option value=6 >内蒙古</option>
+			<option value=7 >辽宁</option>
+			<option value=8 >吉林</option>
+			<option value=9 >黑龙江</option>
+			<option value=10 >江苏</option>
+			<option value=11 >浙江</option>
+			<option value=12 >安徽</option>
+			<option value=13 >福建</option>
+			<option value=14 >江西</option>
+			<option value=15 >山东</option>
+			<option value=16 >河南</option>
+			<option value=17 >湖北</option>
+			<option value=18 >湖南</option>
+			<option value=19 >广东</option>
+			<option value=20 >广西</option>
+			<option value=21 >海南</option>
+			<option value=22 >四川</option>
+			<option value=23 >贵州</option>
+			<option value=24 >云南</option>
+			<option value=25 >西藏</option>
+			<option value=26 >陕西</option>
+			<option value=27 >甘肃</option>
+			<option value=28 >宁夏</option>
+			<option value=29 >青海</option>
+			<option value=30 >新疆</option>
+			<option value=31 >香港</option>
+			<option value=32 >澳门</option>
+			<option value=33 >台湾</option>
+		</select>
+		<select class="city">
+		</select>
+		<a class="quary">查询</a>
+	</div>
+	<dl class="number"></dl>
 </div>
 {%endblock%}
 {%block js%}<script data-main="{% static 'js/home.js' %}" src="{% static 'js/require.js' %}"></script>{%endblock%}

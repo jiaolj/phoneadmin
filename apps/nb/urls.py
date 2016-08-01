@@ -8,6 +8,7 @@ urlpatterns += patterns('apps.'+APP_NAME+'.home',
 )
 urlpatterns += patterns('',
     url(r'^ueditor/', include('apps.'+APP_NAME+'.ueditor.urls')),
+    url(r'^mb/', include('apps.'+APP_NAME+'.mb.urls')),
 )
 handler404 = 'common.views.error.page_not_found'
 handler500 = 'common.views.error.page_error'

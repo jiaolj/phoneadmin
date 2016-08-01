@@ -38,6 +38,7 @@ onload = function(){
 						}
 					});
 					Base.init();
+					$('input.log-uname').focus();
 				}
 			}
 		})();
