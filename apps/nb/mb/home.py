@@ -34,7 +34,12 @@ def get(req):
     if r:
         back['data'] = [{'numb':m.numb,'province':m.province,'city':m.city} for m in r]
     if export:
-        return HttpResponse()
+        backstr = ''
+        for data in back['data']:
+            backstr += data['numb']+'\n'
+        response = HttpResponse(backstr,content_type='application/octet-stream') 
+        response['Content-Disposition'] = 'attachment; filename=%s' %'numbers.txt'
+        return response
     else:
         return to_json(back)
 
