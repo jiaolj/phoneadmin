@@ -6,8 +6,8 @@
 <div class="home">
 	<div class="adminBox"><a class="logout">退出</a></div>
 	<div class="addBox">
-		<input type="text" class="val" />
-		<a class="add">add</a><input type="file"/> Import
+		<div><input type="text" class="val" /><a class="add">add</a><a class="export">export</a></div>
+		<iframe src="/mb/upload"></iframe>
 	</div>
 	<div class="quaryBox">
 		<select class="province">
@@ -51,6 +51,7 @@
 		</select>
 		<a class="quary">查询</a>
 	</div>
+	<div class="pages"><a class="pre">上页</a> <a class="next">下页</a> <input class="page" type="text"/> 页</div>
 	<dl class="number"></dl>
 </div>
 {%endblock%}

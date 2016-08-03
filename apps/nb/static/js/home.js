@@ -1,4 +1,4 @@
-onload = function(){
+//window.onload = function(){
 	require.config({
 		paths: {
 			jquery: '/static/js/jquery.min',
@@ -61,18 +61,19 @@ onload = function(){
 					_obj.getCity(arr[0]);
 					return arr;
 				},
-				getData : function(){
+				getData : function(arg){
+					var arg = arg || {};
 					$.ajax({
 						url : '/mb/get',
 						data : function(){
-							var args = {},
+							var args = {page:_obj.conf.page},
 								numb = $('input.val').val().trim(),
 								province = $('select.province').find("option:selected").text(),
 								city = $('select.city').val();
 							if(numb.length>0) args.numb = numb;
 							if(province!='全部') args.province = province;
 							if(city!='all') args.city = city;
-							log(args);
+							if(arg.export) args.export = 1;
 							return args;
 						}(),
 						success : function(back){
@@ -92,7 +93,7 @@ onload = function(){
 				init : function(){
 					_obj = this;
 					_obj.conf = {
-
+						page : 1
 					};
 					Jfa.init({
 						callback : {
@@ -104,8 +105,6 @@ onload = function(){
 							_obj.getLogin();
 						}
 					});
-					_obj.conf.citys = _obj.getCitys();
-					_obj.getData();
 					$('select.province').change(function(){
 						var val = parseInt($(this).val()) || 34;
 						_obj.getCity(_obj.conf.citys[val]);
@@ -141,12 +140,35 @@ onload = function(){
 							})
 						};
 					})
-					$('input[type="file"]').change(function(){
-						log(1);
+					$('a.export').click(function(){
+						_obj.getData({
+							export : 1,
+						})
 					})
+					$('.pages a.pre').click(function(){
+						_obj.conf.page--;
+						if(_obj.conf.page<1) _obj.conf.page = 1;
+						$('input.page').val(_obj.conf.page);
+						_obj.getData();
+					})
+					$('.pages a.next').click(function(){
+						_obj.conf.page++;
+						$('input.page').val(_obj.conf.page);
+						_obj.getData();
+					})
+					$('input.page').keypress(function(e){
+						if(e.keyCode==13){
+							var page = parseInt($(this).val().trim());
+							_obj.conf.page = page;
+							_obj.getData();
+						};
+					})
+					_obj.conf.citys = _obj.getCitys();
+					$('input.page').val(_obj.conf.page);
+					_obj.getData();
 				}
 			}
 		})();
 		Start.init();
 	})
-}
+//}

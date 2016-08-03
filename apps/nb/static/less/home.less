@@ -1,16 +1,20 @@
 @import 'base.less';
 .base;
 .home {
-	.w(96,%);.mg(0 auto);
+	.w(96,%);.mg(0 auto);.psr;
 	.adminBox {
 		.lh(30);.mgb(9);
 	}
 	.addBox {
+		.mgl(300);.psa;
 		input[type="text"] {
 			.w(110);
 		}
 		input[type="file"] {
 			.w(130);
+		}
+		iframe {
+			.h(400);.w(220);.bdn;.psr;.t(22);
 		}
 	}
 	.quaryBox {
@@ -24,5 +28,10 @@
 	}
 	dl.number {
 		.lh(20);.mgt(9);
+	}
+	.pages {
+		input.page {
+			.w(30);.pd(0 6px);
+		}
 	}
 }
